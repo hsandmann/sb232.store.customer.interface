@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
+import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,6 +19,9 @@ public interface CustomerController {
 
     @GetMapping("/customer/{id}")
     public CustomerOut get(@PathVariable(required = true) String id);
+
+    @PostMapping("/customer/login/")
+    public CustomerOut login(@RequestBody CustomertIn in);
 
     @DeleteMapping("/customer/{id}")
     public void delete(@PathVariable(required = true) String id);
