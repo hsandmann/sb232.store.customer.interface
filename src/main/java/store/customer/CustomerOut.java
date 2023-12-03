@@ -8,4 +8,10 @@ public record CustomerOut(
     Date birthdate,
     String cpf,
     String email
-) {}
+) {
+
+    public CustomerOut(String id) {
+        this(id, null, null, null, null);
+    }
+
+}
